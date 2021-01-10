@@ -13,40 +13,66 @@
 	<link rel="stylesheet" href="assets/css/main.css" />
 
 
-<!-- web emulator view stuff start-->
-	<style>
-		.emulator_view {
-			width:384px;
-			height:272px;
-			margin-bottom: 70px;
-		}
-	</style>
-	<script>
-		let saved_pic_html=null;
-		let current_active_emulator=null;
-		function load_title(element, address)
-		{
-			//close any other active emulator frame
-			if(saved_pic_html != null)
-			{
-				//restore preview pic
-				$('#'+current_active_emulator).html(saved_pic_html);
-			}
+<!-- iframe stuff start -->
+<style>
+#view_detail {
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    z-index: 2000;
+    background-color: #444444;
+    outline: none;
+    overflow-y: auto;
+    opacity: 1.0;
+    border-radius: 10px;
+	overflow: visible;
+}
 
-			//save preview pic
-			var emu_container = $(element).parent();
-			saved_pic_html=emu_container.html();
-			current_active_emulator = emu_container.attr('id');
-			//turn picture into iframe
-			emu_container.html(`
-			<iframe width="100%" height="100%"
-				src="${address}">
-			</iframe>
-			`);
-		}
+#view_iframe {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-top: 34px;
+}
 
-	</script>
-<!-- web emulator view stuff end-->
+#view_close {
+    position: absolute;
+    width: 16px;
+    right: 0;
+    top: 0;
+    background-color: transparent;
+	z-index: 2001;
+}
+
+#view_title {
+    position: absolute;
+    background-color: transparent;
+    color: lightgrey;
+    padding: 10px;
+}
+</style>
+
+<script>
+	function load_title(name, address)
+	{
+		$('#view_detail').show();
+		$('#view_title').text(name);
+		$('#view_iframe').html(`
+		<iframe width="100%" height="100%"
+			src="${address}">
+		</iframe>
+		`);
+	}
+	function close_detail()
+	{
+		$('#view_detail').hide();
+		$('#view_iframe').empty();
+	}
+</script>
+
+<!-- iframe stuff end -->
 
 </head>
 
@@ -137,6 +163,15 @@
 									allows me to publish in a more blog-style manner.</p>
 							</article>
 
+
+<!-- iframe stuff start -->
+							<article id="view_detail" style="display: none;">
+								<button id="view_close" type="button" onclick="close_detail();">X</button>
+								<span id="view_title">Nora</span>
+								<div id="view_iframe"></div>			
+							</article>
+<!-- iframe stuff end -->
+
 						</div>
 					</div>
 					<div class="col-4 col-12-narrower">
@@ -172,18 +207,12 @@
 							<section>
 								<h3>Online Demos</h3>
 								<ul class="links">
-									<li id="emuview0" class="emulator_view"><a href="#" onclick="load_title(this, 'https://dirkwhoffmann.github.io/virtualc64web/#openROMS=true#2ndSID=d420#http://csdb.dk/getinternalfile.php/206403/to_norah.prg');return false;">
-											<img src="nora.png">
-											To Norah (Elysium and Wrath, 2020)</a>
-									</li>
-									<li id="emuview1" class="emulator_view"><a href="#" onclick="load_title(this, 'https://dirkwhoffmann.github.io/virtualc64web/#openROMS=true#http://csdb.dk/getinternalfile.php/198962/ald-aluminium.prg');return false;">
-										<img src="aluminium.png">
-										Aluminium Hearts in Love</a>
-									</li>
-									
+									<li><a href="#" onclick="load_title('To Norah (Elysium and Wrath, 2020)', 'https://dirkwhoffmann.github.io/virtualc64web/#openROMS=true#2ndSID=d420#http://csdb.dk/getinternalfile.php/206403/to_norah.prg');return false;">To Norah (Elysium and Wrath, 2020)</a>
+										<!--a
+											href="https://dirkwhoffmann.github.io/virtualc64web/#openROMS=true#2ndSID=d420#http://csdb.dk/getinternalfile.php/206403/to_norah.prg">To
+											Norah (Elysium and Wrath, 2020)</a--></li>
 								</ul>
 								<!-- <iframe src="https://dirkwhoffmann.github.io/virtualc64web/#openROMS=true#2ndSID=d420#http://csdb.dk/getinternalfile.php/206403/to_norah.prg" width="300" height="200" loading="lazy"></iframe> -->
-
 
 							</section>
 							<section>
