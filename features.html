@@ -20,15 +20,17 @@
 		<div id="header">
 
 			<!-- Logo -->
-			<h1><a href="index.html" id="logo">VirtualC64<em> for macOS</em></a></h1>
+			<h1><a href="index.html" id="logo">VirtualC64<em> for macOS and Web</em></a></h1>
 
 			<!-- Nav -->
 			<nav id="nav">
 				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li class="current"><a href="virtualc64.html">VirtualC64</a></li>
-					<li><a href="vamiga.html">vAmiga</a></li>
-					<li><a href="moira.html">Moira</a></li>
+					<li class="current"><a href="index.html">News</a></li>
+					<li><a href="features.html">Features</a></li>
+					<li><a href="https://github.com/dirkwhoffmann/virtualc64">Sources</a></li>
+					<li><a href="https://github.com/dirkwhoffmann/virtualc64/issues">Issues</a></li>
+					<li><a href="https://github.com/dirkwhoffmann/virtualc64/discussions">Discussions</a></li>
+					<li><a href="https://github.com/dirkwhoffmann/virtualc64/wiki">Wiki</a></li>
 					<li><a href="impressum.html">Impressum</a></li>
 				</ul>
 			</nav>
@@ -38,23 +40,13 @@
 			<div class="container">
 				<div id="content">
 					<article>
-						<span class="image featured"><img src="images/banner-vc.jpg" alt="" /></span>
+						<span class="image featured"><img src="images/vc-plain.jpg" alt="" /></span>
 					</article>
 				</div>
 			</div>
 		</section>
 
-		<section id="cta" class="wrapper style1">
-			<div class="container">
-				<header>
-					<a href="../virtualc64/VirtualC64_3.4.zip" class="button icon fa-arrow-circle-down">Download v3.4</a>
-					<a href="https://github.com/dirkwhoffmann/VirtualC64" class="button icon brands fa-github">Visit on
-						Github</a>
-				</header>
-			</div>
-		</section>
-
-		<!-- Posts -->
+		<!-- Grid -->
 		<section class="wrapper style1">
 			<div class="container">
 				<div class="row">
@@ -63,23 +55,75 @@
 							<a href="#" class="image left"><img src="images/icon-vc.jpg" alt="" /></a>
 							<div class="inner">
 								<h3>About</h3>
-								<p>VirtualC64 emulates a Commodore 64 on your Mac. Originally, the emulator was intended
-									as a demonstration of a virtual CPU environment that can be used in a one-year or
-									two-year course on computer engineering. Over the years, the emulator has become
-									more
-									and more accurate and evolved into a full-blown C64 emulator.</p>
+								<p>VirtualC64 turns your Apple Macintosh into a Commodore 64. Both PAL and NTSC
+									 are emulated with a strong emphasis on PAL emulation accuracy. Due to 
+									 cycle-accurate emulation, a high emulation accuracy is achieved.
+								</p>
 							</div>
 						</div>
 					</section>
 					<section class="col-6 col-12-narrower">
 						<div class="box post">
+							<a href="#" class="image left"><img src="images/icon-vw.jpg" alt="" /></a>
+							<div class="inner">
+								<h3>VirtualC64 Web</h3>
+								<p>The core emulator is designed to be compatible with WebAssembly and can now 
+									run in your browser. With the new web version, viewing demos or playing games
+									is just a few mouse clicks away.</p>
+							</div>
+						</div>
+					</section>
+					<section class="col-6 col-12-narrower">
+						<div class="box post">
+							<a href="#" class="image left"><img src="images/hist.jpg" alt="" /></a>
+							<div class="inner">
+								<h3>About</h3>
+								<p>VirtualC64 has a long history under it's belt. Originally,
+									the emulator was intended as a demonstrator of a virtual CPU environment that can be
+									used in a one-year or two-year course on computer engineering.
+									Over the years, VirtualC64 has become more and more accurate and
+									evolved into a full-blown emulator.</p>
+							</div>
+						</div>
+					</section>
+					<section class="col-6 col-12-narrower">
+						<div class="box post">
+							<a href="#" class="image left"><img src="images/dao.png" alt="" /></a>
+							<div class="inner">
+								<h3>Philosophy</h3>
+								<p>The development of VirtualC64 is based on three basic principles. 
+									Easy: VirtualC64 bridges the gap between the emulated and the 
+									real machine with an easy-to-use interface. Clean: It is my 
+									deep conviction that the code quality is as important as 
+									system-level functionality. Free: VirtualC64 is open-source software.</p>
+							</div>
+						</div>
+					</section>
+
+					<section class="col-6 col-12-narrower">
+						<div class="box post">
 							<a href="#" class="image left"><img src="images/roms-vc.jpg" alt="" /></a>
 							<div class="inner">
 								<h3>Roms</h3>
-								<p>When the emulator launches for the first time, you will be prompted to add four Rom
-									images per drag-and-drop. Due to their unclear copyright status, the Rom images
-									are not pre-installed. Note that VirtualC64 has been designed to
-									be compatible with the Rom images included with other C64 emulators such as VICE.
+								<p>When the emulator launches for the first time, you will be prompted
+									to add four Rom images per drag-and-drop. Due to their unclear copyright
+									status, the Rom images are not pre-installed. As a side note, however,
+									it should be mentioned that VirtualC64 has been designed to be compatible
+									with the Rom images included with other C64 emulators such as VICE.
+								</p>
+							</div>
+						</div>
+					</section>
+					<section class="col-6 col-12-narrower">
+						<div class="box post">
+							<a href="#" class="image left"><img src="images/roms-mega.jpg" alt="" /></a>
+							<div class="inner">
+								<h3>Free Rom replacements</h3>
+								<p>If you do not have legal access to the original Commodore Roms,
+									you can run the emulator with the free Rom replacements that have
+									been developed as part of the Mega65 project. Recent versions of
+									these Roms ship with the emulator and can be installed with a single
+									click in the Rom configuration panel.
 								</p>
 							</div>
 						</div>
@@ -92,9 +136,22 @@
 							<div class="inner">
 								<h3>Input devices</h3>
 								<p>To use a joystick within the emulator, either enable keyboard emulation or connect an
-									external USB joystick. The emulator has been tested with the Speedlink Competition
-									Pro SL-6602 and the Sony Dualshock 4. VirtualC64 also supports the RetroFun! USB
-									adapter, which allows the connection of original Commodore joysticks.</p>
+									external USB joystick. It is recommended to use the emulator with the Speedlink
+									Competition Pro (USB), but other controllers such as the Sony Dualshock 4 are
+									supported, too. VirtualC64 also supports the RetroFun! USB adapter which allows the
+									connection of original Commodore joysticks.</p>
+							</div>
+						</div>
+					</section>
+					<section class="col-6 col-12-narrower">
+						<div class="box post">
+							<a href="#" class="image left"><img src="images/vc-disk.jpg" alt="" /></a>
+							<div class="inner">
+								<h3>Media formats</h3>
+								<p>VirtualC64 supports all common C64 media formats. Disks can be imported
+									in form of D64, T64, PRG, P00, or G64 files. The emulator also supports
+									the TAP format for datasette tapes and the CRT format for cartridges
+									that can be plugged into the expansion port of the C64.</p>
 							</div>
 						</div>
 					</section>
@@ -114,6 +171,13 @@
 
 		<!-- Footer -->
 		<div id="footer">
+
+			<!-- Icons -->
+			<ul class="icons">
+				<li><a href="https://github.com/dirkwhoffmann" class="icon brands fa-github"><span
+							class="label">GitHub</span></a></li>
+			</ul>
+
 			<!-- Copyright -->
 			<div class="copyright">
 				<ul class="menu">
