@@ -16,7 +16,7 @@
 <!-- web emulator view stuff start-->
 	<style>
 		.emulator_view {
-			width:384px;
+			width:394px;
 			height:272px;
 			margin-bottom: 70px;
 		}
@@ -24,7 +24,7 @@
 	<script>
 		let saved_pic_html=null;
 		let current_active_emulator=null;
-		function load_title(element, address)
+		function load_title(element, params ,address)
 		{
 			//close any other active emulator frame
 			if(saved_pic_html != null)
@@ -39,10 +39,17 @@
 			current_active_emulator = emu_container.attr('id');
 			//turn picture into iframe
 			emu_container.html(`
-			<iframe width="100%" height="100%"
-				src="${address}">
+			<iframe id="vc64web" width="100%" height="100%"
+				src="https://dirkwhoffmann.github.io/virtualc64web/${params}#${address}">
 			</iframe>
+			<button type="button" onclick="toggle_run();">stop/run</button>
 			`);
+		}
+		function toggle_run()
+		{
+			var vc64web= $('#vc64web').contents()
+			var run_button = vc64web.find('#button_run');
+			run_button.click();
 		}
 
 	</script>
@@ -172,11 +179,11 @@
 							<section>
 								<h3>Online Demos</h3>
 								<ul class="links">
-									<li id="emuview0" class="emulator_view"><a href="#" onclick="load_title(this, 'https://dirkwhoffmann.github.io/virtualc64web/#openROMS=true#2ndSID=d420#http://csdb.dk/getinternalfile.php/206403/to_norah.prg');return false;">
+									<li id="emuview0" class="emulator_view"><a href="#" onclick="load_title(this, '#openROMS=true#2ndSID=d420#navbar=hidden', 'http://csdb.dk/getinternalfile.php/206403/to_norah.prg');return false;">
 											<img src="nora.png">
 											To Norah (Elysium and Wrath, 2020)</a>
 									</li>
-									<li id="emuview1" class="emulator_view"><a href="#" onclick="load_title(this, 'https://dirkwhoffmann.github.io/virtualc64web/#openROMS=true#http://csdb.dk/getinternalfile.php/198962/ald-aluminium.prg');return false;">
+									<li id="emuview1" class="emulator_view"><a href="#" onclick="load_title(this, '#openROMS=true#navbar=hidden','http://csdb.dk/getinternalfile.php/198962/ald-aluminium.prg');return false;">
 										<img src="aluminium.png">
 										Aluminium Hearts in Love</a>
 									</li>
